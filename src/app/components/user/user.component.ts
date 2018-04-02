@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { User } from '../../models/User';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -8,41 +9,20 @@ import { Component } from '@angular/core';
 
 export class UserComponent {
   //Properties
-  firstName: string;
-  lastName: string;
-  age: number;
-  address;
-  foo: any;
-  hasKids: boolean;
-  numberArray: number[];
-  stringArray: string[];
-  mixedArray: any[];
-  myTuple: [string, number, boolean];
-  unusable: void;
-  u: undefined;
-  n: null;
-
-
+    user: User;
 //Methods
   constructor() {
-  this.firstName = 'Chelsie';
-  this.lastName = 'Saunders';
-  this.age = 30;
+      this.user = {
+        firstName: 'Chelsie',
+        lastName: 'Saunders',
+        age : 41,
+        address: {
+          street: '242 Spencer Peak Way G12',
+          city: 'Draper',
+          state: 'UT'
+        }
+      }
 
-  this.address = {
-    street: '242 Spencer Peak Way G12',
-    city: 'Draper',
-    state: 'Utah'
-  };
-
-  this.foo = true;
-  this.hasKids = true;
-  this.numberArray = [1,2,3];
-  this.stringArray = ['hello', 'world'];
-  this.mixedArray = [true, undefined, 'hello'];
-  this.myTuple = ['hello', 1, true];
-  this.unusable = undefined;
-  this.u = undefined;
-  this.n = null;
   }
+
 }
